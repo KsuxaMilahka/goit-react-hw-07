@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { addContact } from '../../redux/contactsSlice';
+import { addContact } from '../../redux/contactsOps';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import * as Yup from 'yup';
 import styles from './ContactForm.module.css';
@@ -45,7 +45,7 @@ const ContactForm = () => {
       onSubmit={handleSubmit}
       validationSchema={ContactValidationSchema}
     >
-      {({ errors }) => (
+      {() => (
         <Form className={styles.form}>
           <label className={styles.label}>
             <span>Name</span>
